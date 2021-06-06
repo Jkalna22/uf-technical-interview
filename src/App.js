@@ -96,7 +96,7 @@ function App() {
       <Header />
       <Banner />
       <div className="App">
-        <LoadScript googleMapsApiKey="AIzaSyDvONkeZ0ACYe3KbwtQkuqoJOr7Jxhq-b8">
+        <LoadScript googleMapsApiKey="AIzaSyCZWa-GNC4dI1t1CbJODfd8uY78sD8kiwE">
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
@@ -173,5 +173,3 @@ function App() {
 }
 
 export default App;
-
-//Google Maps API Key# AIzaSyDvONkeZ0ACYe3KbwtQkuqoJOr7Jxhq-b8
