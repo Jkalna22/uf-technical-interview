@@ -10,7 +10,7 @@ const Vehicle = ({ vehicle, driverData }) => {
     year,
     maneuver,
     traveling_direction,
-    traveling_on_Street,
+    traveling_on_street,
   } = vehicle;
 
   return (
@@ -18,12 +18,12 @@ const Vehicle = ({ vehicle, driverData }) => {
       style={{ display: "flex", flexDirection: "row", marginLeft: "20px", marginRight: "20px", fontSize: '15px' }}
     >
       <div style={{ display: "flex", flexDirection: "column", marginRight: '10px' }}>
-        <h5>Vehicle # {vehicle_number}</h5>
+        <h5 style={{fontSize: '16px'}}>Vehicle # {vehicle_number}</h5>
         <p>Make: {make}</p>
         <p>Model: {model}</p>
         <p>Year: {year}</p>
         <p>Color: {color}</p>
-        <p>Traveling On Street: {traveling_on_Street}</p>
+        <p>Traveling On Street: {traveling_on_street}</p>
         <p>Traveling Direction: {traveling_direction}</p>
         <p>Manuever: {maneuver}</p>
       </div>
