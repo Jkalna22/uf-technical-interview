@@ -29,7 +29,7 @@ const crashEvent = ({ crashData }) => {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px", marginRight: '20px', fontSize: '15px' }}>
+    <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px", marginRight: '20px', fontSize: '12px' }}>
       <h3 style={{textDecoration: 'underline'}} >Report # {report_number}</h3>
       <h4>Investigating Agency: {investigating_agency}</h4>
       <div style={{display: 'flex', flexDirection: 'row'}}>

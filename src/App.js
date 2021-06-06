@@ -3,20 +3,23 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { useEffect, useState } from "react";
 import {
   fetchAllCrashEventData,
+  fetchAllDriverData,
   fetchCrashData,
   fetchDriverData,
   fetchVehicleData,
 } from "./api";
 import CrashEvent from "./components/CrashEvent";
 import Vehicle from "./components/Vehicle";
-import Driver from "./components/Driver";
 import Pagination from "./components/Pagination";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
+import BarChart from "./components/BarChart";
+import PieChart from "./components/PieChart";
+
 
 const containerStyle = {
   flexGrow: 5,
-  height: "90vh",
+  height: "70vh",
 };
 
 const center = {
@@ -26,6 +29,8 @@ const center = {
 
 function App() {
   const [markers, setMarkers] = useState([]);
+  const [allDriverData, setAllDriverData] = useState([]);
+  const [allCrashEventData, setAllCrashEventData] = useState([]);
   const [crashData, setCrashData] = useState([]);
   const [vehicleData, setVehicleData] = useState([]);
   const [driverData, setDriverData] = useState([]);
@@ -49,6 +54,17 @@ function App() {
     try {
       Promise.all([fetchAllCrashEventData()]).then(([data]) => {
         setMarkers(data);
+        setAllCrashEventData(data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      Promise.all([fetchAllDriverData()]).then(([data]) => {
+        setAllDriverData(data);
       });
     } catch (error) {
       console.log(error);
@@ -83,7 +99,7 @@ function App() {
       <Header />
       <Banner />
       <div className="App">
-        <LoadScript googleMapsApiKey="AIzaSyBWZ5_RG4kiTvO-FdnG5aLKloSzygBWmjs">
+        <LoadScript googleMapsApiKey="AIzaSyDvONkeZ0ACYe3KbwtQkuqoJOr7Jxhq-b8">
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
@@ -108,6 +124,7 @@ function App() {
               display: "flex",
               flexDirection: "column",
               flexGrow: 1,
+              height: "70vh",
               width: "200px",
               backgroundColor: '#C1C1C1'
             }}
@@ -143,10 +160,14 @@ function App() {
           </div>
         )}
       </div>
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', backgroundColor: '#F3F3F3'}}>
+      <BarChart allDriverData={allDriverData}/>
+      <PieChart allDriverData={allDriverData}/>
+      </div>
     </div>
   );
 }
 
 export default App;
 
-//Google Maps API Key# AIzaSyA4v_sBo_JIiO5upKMKFuTJso2VMZotTd0
+//Google Maps API Key# AIzaSyDvONkeZ0ACYe3KbwtQkuqoJOr7Jxhq-b8

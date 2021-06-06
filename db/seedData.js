@@ -310,7 +310,7 @@ async function populateDriverCrashEventData() {
         reportNumber: 5000003,
         vehicleNumber: 1,
         personNumber: 1,
-        injurySeverity: "none",
+        injurySeverity: "None",
         sex: "M",
         age: 22,
         restraintSystems: "Shoulder & Lap Belts",
