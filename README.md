@@ -8,6 +8,7 @@ I created this fullstack app to track and display crash event data.
 ## **Features**
 
 - Click on map markers to view crash event data.
+- Markers are colored by serverity of crash event.
 - Pagination on each vehicle associated with the crash event.
 - View crash severity through easy to read pie chart.
 - Extract average age of drivers through crash event data.  
