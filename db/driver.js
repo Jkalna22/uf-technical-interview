@@ -20,6 +20,25 @@ const createDriverCrashEventData = async ({reportNumber, vehicleNumber, personNu
 
 }
 
+const getDriverDataByReportNumber = async (reportNumber) => {
+    console.log(reportNumber);
+    try {
+      const { rows: driverData } = await client.query(`
+              SELECT * 
+              FROM driver
+              WHERE "report_number" = $1;
+          `,
+          [reportNumber]
+          );
+  
+      return driverData;
+  
+    } catch (error) {
+      throw error;
+    }
+  };
+
 module.exports = {
-    createDriverCrashEventData
+    createDriverCrashEventData,
+    getDriverDataByReportNumber,
 }
