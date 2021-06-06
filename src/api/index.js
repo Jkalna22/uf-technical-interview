@@ -1,6 +1,6 @@
 export async function fetchAllCrashEventData() {
     try {
-      const response = await fetch(`http://localhost:3000/api/crashEvent`, {
+      const response = await fetch(`/api/crashEvent`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -14,7 +14,7 @@ export async function fetchAllCrashEventData() {
 
   export async function fetchCrashData(reportNumber) {
     try {
-      const response = await fetch(`http://localhost:3000/api/crashEvent/${reportNumber}`, {
+      const response = await fetch(`/api/crashEvent/${reportNumber}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -28,7 +28,7 @@ export async function fetchAllCrashEventData() {
 
   export async function fetchVehicleData(reportNumber) {
     try {
-      const response = await fetch(`http://localhost:3000/api/vehicle/${reportNumber}`, {
+      const response = await fetch(`/api/vehicle/${reportNumber}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -42,7 +42,7 @@ export async function fetchAllCrashEventData() {
 
   export async function fetchDriverData(reportNumber) {
     try {
-      const response = await fetch(`http://localhost:3000/api/driver/${reportNumber}`, {
+      const response = await fetch(`/api/driver/${reportNumber}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -56,7 +56,7 @@ export async function fetchAllCrashEventData() {
 
   export async function fetchAllDriverData() {
     try {
-      const response = await fetch(`http://localhost:3000/api/driver`, {
+      const response = await fetch(`/api/driver`, {
         headers: {
           "Content-Type": "application/json",
         },
