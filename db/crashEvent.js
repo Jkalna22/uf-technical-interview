@@ -66,8 +66,25 @@ const getAllCrashEventData = async () => {
   }
 };
 
+const getCrashDataByReportNumber = async (reportNumber) => {
+  try {
+    const { rows: crashData } = await client.query(`
+            SELECT * 
+            FROM crash_event
+            WHERE "report_number" = $1;
+        `,
+        [reportNumber]
+        );
+
+    return crashData;
+
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
     createCrashEvent,
     getAllCrashEventData,
-    
+    getCrashDataByReportNumber,
 }
