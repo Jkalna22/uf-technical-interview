@@ -27,7 +27,7 @@ const Pagination = ({ vehiclePerPage, totalNumberOfVehicles, paginate }) => {
               }}
               onClick={() => paginate(number)}
             >
-              {" "}
+              Vehicle # {" "} 
               {number}{" "}
             </button>
           </div>
