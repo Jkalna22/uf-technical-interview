@@ -16,7 +16,6 @@ import Banner from "./components/Banner";
 import BarChart from "./components/BarChart";
 import PieChart from "./components/PieChart";
 
-
 const containerStyle = {
   flexGrow: 5,
   height: "70vh",
@@ -92,8 +91,6 @@ function App() {
     }
   };
 
-  console.log(vehicleData[0]);
-
   return (
     <div>
       <Header />
@@ -126,7 +123,7 @@ function App() {
               flexGrow: 1,
               height: "70vh",
               width: "200px",
-              backgroundColor: '#C1C1C1'
+              backgroundColor: "#C1C1C1",
             }}
           >
             <div>
@@ -160,9 +157,16 @@ function App() {
           </div>
         )}
       </div>
-      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', backgroundColor: '#F3F3F3'}}>
-      <BarChart allDriverData={allDriverData}/>
-      <PieChart allDriverData={allDriverData}/>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          backgroundColor: "#F3F3F3",
+        }}
+      >
+        <BarChart allDriverData={allDriverData} />
+        <PieChart allDriverData={allDriverData} />
       </div>
     </div>
   );

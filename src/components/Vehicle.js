@@ -15,10 +15,22 @@ const Vehicle = ({ vehicle, driverData }) => {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "row", marginLeft: "20px", marginRight: "20px", fontSize: '12px' }}
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        marginLeft: "20px",
+        marginRight: "20px",
+        fontSize: "12px",
+      }}
     >
-      <div style={{ display: "flex", flexDirection: "column", marginRight: '10px' }}>
-        <h5 style={{fontSize: '16px'}}>Vehicle # {vehicle_number}</h5>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          marginRight: "10px",
+        }}
+      >
+        <h5 style={{ fontSize: "16px" }}>Vehicle # {vehicle_number}</h5>
         <p>Make: {make}</p>
         <p>Model: {model}</p>
         <p>Year: {year}</p>
@@ -27,7 +39,7 @@ const Vehicle = ({ vehicle, driverData }) => {
         <p>Traveling Direction: {traveling_direction}</p>
         <p>Manuever: {maneuver}</p>
       </div>
-      <div style={{marginLeft: '10px'}}>
+      <div style={{ marginLeft: "10px" }}>
         {driverData.map((driver) => (
           <Driver driver={driver} />
         ))}

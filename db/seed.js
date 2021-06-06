@@ -1,5 +1,5 @@
-const client = require('./client');
-const { buildDB } = require('./seedData');
+const client = require("./client");
+const { buildDB } = require("./seedData");
 buildDB()
-    .catch(console.error)
-    .finally(() => client.end());
+  .catch(console.error)
+  .finally(() => client.end());

@@ -21,31 +21,39 @@ const crashEvent = ({ crashData }) => {
     let hours = splitTime[0];
     const minutes = splitTime[1];
     const seconds = splitTime[2];
-    if(hours > 12){
+    if (hours > 12) {
       return `${hours - 12}:${minutes}:${seconds} pm`;
     } else {
-      return `${hours}:${minutes}:${seconds} am`
+      return `${hours}:${minutes}:${seconds} am`;
     }
-  }
+  };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px", marginRight: '20px', fontSize: '12px' }}>
-      <h3 style={{textDecoration: 'underline'}} >Report # {report_number}</h3>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        marginLeft: "20px",
+        marginRight: "20px",
+        fontSize: "12px",
+      }}
+    >
+      <h3 style={{ textDecoration: "underline" }}>Report # {report_number}</h3>
       <h4>Investigating Agency: {investigating_agency}</h4>
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-      <div style={{marginRight: '10px'}}>
-        <p>Severity: {crash_severity}</p>
-        <p>Date: {formattedDate}</p>
-        <p>Time: {formattedTimeFunction(crash_time)}</p>
-        <p>On Street: {on_street}</p>
-      </div>
-      <div style={{marginLeft: '10px'}}>
-        <p>From Street: {from_intersecting_street}</p>
-        {offset_direction ? <p>Offset direction: {offset_direction}</p> : ""}
-        {offset_feet ? <p>Offset feet: {offset_feet}</p> : ""}
-        <p>City: {city}</p>
-        <p>County: {county}</p>
-      </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div style={{ marginRight: "10px" }}>
+          <p>Severity: {crash_severity}</p>
+          <p>Date: {formattedDate}</p>
+          <p>Time: {formattedTimeFunction(crash_time)}</p>
+          <p>On Street: {on_street}</p>
+        </div>
+        <div style={{ marginLeft: "10px" }}>
+          <p>From Street: {from_intersecting_street}</p>
+          {offset_direction ? <p>Offset direction: {offset_direction}</p> : ""}
+          {offset_feet ? <p>Offset feet: {offset_feet}</p> : ""}
+          <p>City: {city}</p>
+          <p>County: {county}</p>
+        </div>
       </div>
     </div>
   );
